@@ -195,7 +195,7 @@ define(function(require) {
       })));
     },
 
-    listenForCompletition: function() {
+    listenForCompletion: function() {
       var context = this;
       var coNumber = context.getAdaptCoById();
       var landingPage = Adapt.course.get('_contents')._courseNavigation._landingPage;

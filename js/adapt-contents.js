@@ -81,13 +81,11 @@ define(function(require) {
     _.each(contentObjects, function(item, index) {
       var contents;
       var pageModel = item;
-      var currentPageComponents = pageModel.findDescendants('components').where({
-        '_isAvailable': true
-      });
+      var currentPageComponents = pageModel.findDescendantModels('components', { where: {'_isAvailable': true }});
       var availableComponents = completionCalculations.filterAvailableChildren(currentPageComponents);
       var pageComponents = completionCalculations.getPageLevelProgressEnabledModels(availableComponents);
       if (Adapt.course.get('_contents')._showArticleTitles) {
-        contents = completionCalculations.generateListWithTitles(pageModel.findDescendants('articles').models, pageComponents);
+        contents = completionCalculations.generateListWithTitles(pageModel.findDescendantModels('articles'), pageComponents);
       } else {
         contents = pageComponents;
       }
