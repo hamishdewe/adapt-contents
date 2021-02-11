@@ -286,9 +286,9 @@ define(function(require) {
       if (entry._type == 'article') {
         $div = $('.' + entry._id);
       } else {
-        $div = $('.' + entry._id).find('.component-inner');
+        $div = $('.' + entry._id).find('.component__inner');
       }
-      var hidden = $($div).closest('.block-inner').css('visibility') === 'hidden';
+      var hidden = $($div).closest('.block__inner').css('visibility') === 'hidden';
       var elementTop = $($div).offset().top;
       var elementBottom = elementTop + $($div).outerHeight();
       return (elementBottom > viewportTop && elementTop < viewportBottom) && !hidden;
