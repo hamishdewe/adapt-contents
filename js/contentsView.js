@@ -114,7 +114,7 @@ define(function(require) {
       if(Adapt.course.get('_contents')._courseNavigation._scrollContentsHeight._isEnabled) {
         $('.contents').scrollTo($currentPage.position().top + Adapt.course.get('_contents')._courseNavigation._scrollContentsHeight._offset);
       }
-      this.listenForCompletition();
+      this.listenForCompletion();
       if (Adapt.course.get('_contents')._courseNavigation._circleProgress._isEnabled) {
         this.drawProgressCircle();
       }
